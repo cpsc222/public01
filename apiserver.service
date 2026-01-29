@@ -1,0 +1,12 @@
+[Unit]
+Description=Python Local API server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/user/cpsc222/api.py
+WorkingDirectory=/home/user/cpsc222
+Restart=always
+
+[Install]
+WantedBy=default.target
