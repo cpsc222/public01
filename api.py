@@ -5,7 +5,7 @@ import pwd
 import grp
 import base64
 
-HOST = "127.0.0.1"
+HOST = "0.0.0.0"
 PORT = 3000
 
 USERNAME = "test"
@@ -13,7 +13,7 @@ PASSWORD = "abcABC123456"
 
 class API(BaseHTTPRequestHandler):
 
-	def _unauthroized(self):
+	def _unauthorized(self):
 		self.send_response(401)
 		self.send_header("www-authenticate",'basic realm-"restricted"')
 		self.end_headers()
